@@ -13,7 +13,7 @@ httpx[http2]
 lyricsgenius
 motor
 wget
-pymongo==3.12.0
+pyrogram==2.0.106
 psutil
 pytube
 pykeyboard
