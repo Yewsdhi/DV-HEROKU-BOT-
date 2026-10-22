@@ -1,6 +1,10 @@
-import pyromod.listen  # noqa
-from pyrogram import Client, filters
-from config import *
+import pyromod.listen  # noqa: F401
+
+# Import Client directly to avoid a sync-wrapped Client export in some
+# Kurigram/Pyrogram development builds.
+from pyrogram.client import Client
+from pyrogram import filters
+from config import API_ID, API_HASH, BOT_TOKEN, OWNER_ID
 
 app = Client(
     name="DVIS",
