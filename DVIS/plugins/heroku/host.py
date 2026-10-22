@@ -7,8 +7,12 @@ import requests
 import urllib3
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from pyromod.exceptions import ListenerTimeout
+import asyncio
 
+try:
+    from pyromod.exceptions import ListenerTimeout
+except ImportError:
+    ListenerTimeout = asyncio.TimeoutError
 from DVIS import app
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
