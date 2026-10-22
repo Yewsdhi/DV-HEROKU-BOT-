@@ -1,4 +1,5 @@
-FROM python:3.12-slim
+
+FROM python:3.11-slim
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -6,12 +7,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-        curl \
-        ffmpeg \
-        git \
-        build-essential \
-        libssl-dev \
-        libffi-dev \
+        curl ffmpeg git build-essential libssl-dev libffi-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
