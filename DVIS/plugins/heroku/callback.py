@@ -6,6 +6,9 @@ import urllib3
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyromod.exceptions import ListenerTimeout
+except ImportError:
+    class ListenerTimeout(TimeoutError):
+        pass
 
 from DVIS import app
 from config import OWNER_ID as SUDOERS
